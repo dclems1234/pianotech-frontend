@@ -1,7 +1,7 @@
 ﻿import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://192.168.5.231:5000/api",
+    baseURL: "https://pianotechpro.azurewebsites.net/api",
 });
 
 api.interceptors.request.use((config) => {
@@ -13,3 +13,4 @@ api.interceptors.request.use((config) => {
 });
 
 export default api;
+
