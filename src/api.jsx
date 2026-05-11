@@ -1,7 +1,7 @@
 ﻿import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://pianotechpro.azurewebsites.net/api",
+    baseURL: "https://pianotechpro-fgcgavetexg6hddf.eastus-01.azurewebsites.net/api",
 });
 
 api.interceptors.request.use((config) => {
