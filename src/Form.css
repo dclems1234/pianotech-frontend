@@ -1,0 +1,240 @@
+﻿/* ----------------------------- */
+/* Layout container for all pages */
+/* ----------------------------- */
+
+.form-container {
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    font-family: system-ui, sans-serif;
+}
+.page-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0; /* remove form padding */
+    background: none; /* remove white card background */
+    box-shadow: none; /* remove shadow */
+    border-radius: 0; /* remove rounded corners */
+    font-family: system-ui, sans-serif;
+}
+
+/* ----------------------------- */
+/* Page titles */
+/* ----------------------------- */
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+/* ----------------------------- */
+/* Form layout */
+/* ----------------------------- */
+
+.modern-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+input,
+textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+    input:focus,
+    textarea:focus {
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+        outline: none;
+    }
+
+/* ----------------------------- */
+/* Primary button */
+/* ----------------------------- */
+
+.primary-btn {
+    padding: 12px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+    .primary-btn:hover {
+        background: #3a78c2;
+    }
+
+/* ----------------------------- */
+/* Customer list layout */
+/* ----------------------------- */
+
+.customer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ----------------------------- */
+/* Customer card (button-style tile) */
+/* ----------------------------- */
+
+.customer-card {
+    background: #ffffff;
+    border: 2px solid #d0d7de; /* clean border */
+    border-radius: 12px; /* rounded corners */
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+    .customer-card:hover {
+        background: #f6f8fa; /* subtle highlight */
+        transform: translateY(-2px); /* lift effect */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    }
+
+/* ----------------------------- */
+/* Customer card text */
+/* ----------------------------- */
+
+.customer-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #24292f;
+}
+
+.customer-details {
+    font-size: 14px;
+    color: #57606a;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/*---------------------------------*/
+/* Customer details layout */
+/*---------------------------------*/
+
+.details-card {
+    background: #ffffff;
+    border: 2px solid #d0d7de;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.details-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.delete-btn {
+    padding: 12px;
+    background: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+    .delete-btn:hover {
+        background: #c9302c;
+    }
+
+/*---------------------------------*/
+/* Sticky Sidebar */
+/*---------------------------------*/
+
+.sticky-actions {
+    position: sticky;
+    top: 20px; /* distance from top of screen */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* TAB BAR CONTAINER */
+.tab-bar {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* TAB ITEM */
+.tab-item {
+    padding: 10px 20px;
+    background: #f7f7f7;
+    border: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #555;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    transition: background 0.2s ease;
+}
+
+    /* HOVER */
+    .tab-item:hover {
+        background: #eee;
+    }
+
+    /* ACTIVE TAB */
+    .tab-item.active {
+        background: white;
+        color: #000;
+        border-bottom: 2px solid white; /* visually merges with content */
+        border-top: 2px solid #007bff;
+        border-left: 2px solid #007bff;
+        border-right: 2px solid #007bff;
+        font-weight: 700;
+    }
+
+
+
+
+

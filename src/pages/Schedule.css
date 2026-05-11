@@ -1,0 +1,102 @@
+﻿/* Container */
+.schedule-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Navigation buttons */
+.week-nav {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0 20px 0;
+}
+
+    .week-nav button {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+
+        .week-nav button:hover {
+            background: #e8e8e8;
+        }
+
+/* WEEK GRID */
+.week-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* Each day column */
+.week-day-column {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    min-height: 350px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+    .week-day-column:hover {
+        background: #f0f6ff;
+    }
+
+/* Day header */
+.week-day-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #bbb;
+    background: #f0f0f0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+/* Appointment card */
+.week-appt {
+    background: #e7f1ff;
+    border-left: 4px solid #3a7bd5;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.15s ease;
+}
+
+    .week-appt:hover {
+        background: #d9eaff;
+    }
+
+    /* Appointment text */
+    .week-appt strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 0.95rem;
+    }
+
+/* Optional: make the Back button consistent */
+.primary-btn {
+    background: #4a90e2;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+    .primary-btn:hover {
+        background: #357ab8;
+    }

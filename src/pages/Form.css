@@ -1,0 +1,213 @@
+﻿/* ----------------------------- */
+/* Layout container for all pages */
+/* ----------------------------- */
+
+.form-container {
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    font-family: system-ui, sans-serif;
+}
+
+/* ----------------------------- */
+/* Page titles */
+/* ----------------------------- */
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+/* ----------------------------- */
+/* Form layout */
+/* ----------------------------- */
+
+.modern-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+input,
+textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+    input:focus,
+    textarea:focus {
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+        outline: none;
+    }
+
+/* ----------------------------- */
+/* Primary button */
+/* ----------------------------- */
+
+.primary-btn {
+    padding: 12px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+    .primary-btn:hover {
+        background: #3a78c2;
+    }
+
+/*-------------------------------*/
+/* Address Suggestion */
+/*-------------------------------*/
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0;
+    margin: 4px 0 0 0;
+    list-style: none; /* removes bullets */
+    z-index: 1000;
+}
+
+    .suggestions li {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+    }
+
+        .suggestions li:last-child {
+            border-bottom: none;
+        }
+
+        .suggestions li:hover {
+            background: #f0f0f0; /* highlight on hover */
+        }
+
+/* ----------------------------- */
+/* Customer list layout */
+/* ----------------------------- */
+
+.customer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ----------------------------- */
+/* Customer card (button-style tile) */
+/* ----------------------------- */
+
+.customer-card {
+    background: #ffffff;
+    border: 2px solid #d0d7de; /* clean border */
+    border-radius: 12px; /* rounded corners */
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+    .customer-card:hover {
+        background: #f6f8fa; /* subtle highlight */
+        transform: translateY(-2px); /* lift effect */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    }
+
+/* ----------------------------- */
+/* Customer card text */
+/* ----------------------------- */
+
+.customer-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #24292f;
+}
+
+.customer-details {
+    font-size: 14px;
+    color: #57606a;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* INPUT ERROR */
+
+.input-error {
+    border-color: #d9534f !important;
+    background: #ffe6e6;
+}
+
+.error-text {
+    color: #d9534f;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/*-------------------------------*/
+/* Appointment Detail */
+/*-------------------------------*/
+
+.details-box {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.danger-btn {
+    background: #d9534f;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+    .danger-btn:hover {
+        background: #c9302c;
+    }
+
+
+.customer-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
