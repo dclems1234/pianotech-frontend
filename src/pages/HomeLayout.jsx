@@ -8,7 +8,7 @@ function HomeLayout() {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // ⭐ Load logged-in user
+    // Load logged-in user
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (!token) {
@@ -28,7 +28,6 @@ function HomeLayout() {
             });
     }, []);
 
-    // ⭐ Prevent rendering until user is loaded
     if (loading || !user) {
         return (
             <div className="home-layout">
@@ -39,11 +38,14 @@ function HomeLayout() {
         );
     }
 
-    // ⭐ Branding logic (FIXED)
+    // Branding logic
     const companyName = user.companyName || "PianoTech Pro";
 
-    const companyLogo = user.companyLogoUrl
-        ? `http://192.168.5.231:5000${user.companyLogoUrl}`
+    // ⭐ NEW: Load logo from SQL endpoint
+    const apiBase = import.meta.env.VITE_API_URL;
+
+    const companyLogo = user.hasLogo
+        ? `${apiBase}/api/users/${user.id}/logo`
         : "/assets/pianotechpro-logo.png";
 
     return (
@@ -96,7 +98,6 @@ function HomeLayout() {
             </header>
 
             <main className="content-area">
-                {/* ⭐ Pass user to all pages */}
                 <Outlet context={{ user }} />
             </main>
         </div>
@@ -104,6 +105,3 @@ function HomeLayout() {
 }
 
 export default HomeLayout;
-
-
-

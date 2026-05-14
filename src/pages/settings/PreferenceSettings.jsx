@@ -7,13 +7,12 @@ function PreferenceSettings() {
     const [saving, setSaving] = useState(false);
     const [brandingSaving, setBrandingSaving] = useState(false);
 
-    // ⭐ Local branding state
+    // Local branding state
     const [branding, setBranding] = useState({
         companyName: "",
-        companyLogoUrl: ""
+        hasLogo: false
     });
 
-    // All valid IANA timezones
     const timezones = Intl.supportedValuesOf("timeZone");
 
     // ---------------------------------------------------------
@@ -26,7 +25,7 @@ function PreferenceSettings() {
 
                 setBranding({
                     companyName: res.data.companyName || "",
-                    companyLogoUrl: res.data.companyLogoUrl || ""
+                    hasLogo: res.data.hasLogo
                 });
             })
             .catch(err => console.error("Error loading user:", err));
@@ -47,18 +46,18 @@ function PreferenceSettings() {
     }
 
     // ---------------------------------------------------------
-    // SAVE BRANDING (Company Name + Logo URL)
+    // SAVE BRANDING (Company Name only)
     // ---------------------------------------------------------
     async function saveBranding() {
         setBrandingSaving(true);
         try {
-            await api.put("/users/me/branding", branding);
+            await api.put("/users/me/branding", {
+                companyName: branding.companyName
+            });
 
-            // Update user state after saving
             setUser(prev => ({
                 ...prev,
-                companyName: branding.companyName,
-                companyLogoUrl: branding.companyLogoUrl
+                companyName: branding.companyName
             }));
         } catch (err) {
             console.error("Error saving branding:", err);
@@ -67,7 +66,7 @@ function PreferenceSettings() {
     }
 
     // ---------------------------------------------------------
-    // UPLOAD LOGO (Preview only — does NOT save yet)
+    // UPLOAD LOGO (SQL stored)
     // ---------------------------------------------------------
     async function handleLogoUpload(e) {
         const file = e.target.files?.[0];
@@ -77,14 +76,12 @@ function PreferenceSettings() {
         formData.append("file", file);
 
         try {
-            const res = await api.post("/users/me/logo", formData, {
+            await api.post("/users/me/logo", formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             });
 
-            const url = res.data.url;
-
-            // ⭐ Only update local preview — user must click Save Branding
-            setBranding(prev => ({ ...prev, companyLogoUrl: url }));
+            // Update preview flag
+            setBranding(prev => ({ ...prev, hasLogo: true }));
         } catch (err) {
             console.error("Logo upload failed:", err);
         }
@@ -94,9 +91,10 @@ function PreferenceSettings() {
 
     const safeZone = user.timeZone || "America/New_York";
 
-    // ⭐ Build full logo URL for preview
-    const previewLogo = branding.companyLogoUrl
-        ? `http://192.168.5.231:5000${branding.companyLogoUrl}`
+    // ⭐ Build preview URL from SQL endpoint
+    const apiBase = import.meta.env.VITE_API_URL;
+    const previewLogo = branding.hasLogo
+        ? `${apiBase}/api/users/${user.id}/logo`
         : null;
 
     return (
@@ -218,7 +216,3 @@ function PreferenceSettings() {
 }
 
 export default PreferenceSettings;
-
-
-
-
